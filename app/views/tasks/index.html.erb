@@ -3,7 +3,7 @@
     <img src='assets/icon2.png' alt="task" height="42" width="42">
   </div>
   <div>
-    <h1> My tasks </h1>
+    <h1> Task Manager </h1>
   </div>
 </div>
 
@@ -16,9 +16,6 @@
 
     <div class="col-sm">
       <h2>Today</h2>
-      <div>
-        <%= link_to "Create task" , new_path %>
-      </div>
       <ul>
         <% @tasks.each do |task| %>
         <li>
@@ -27,24 +24,26 @@
           <% else %>
             []
           <% end %>
-          <%= link_to task.title , task_path(task["id"]) %>
+          <%= task.title%>
+          <button class="btn">
+            <%= link_to '<i class="far fa-eye"></i>'.html_safe, task_path(task["id"]) %>
+          </button>
 
            <button class="btn">
-             <%= link_to "Delete", task_path(task),
+             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
            </button>
         </li>
         <% end %>
       </ul>
+      <div class="create-button">
+        <%= link_to "+" , new_path %>
+      </div>
     </div>
-
 
     <div class="col-sm">
       <h2>Tomorrow</h2>
-      <div>
-        <%= link_to "Create task" , new_path %>
-      </div>
       <ul>
         <% @tasks.each do |task| %>
         <li>
@@ -53,24 +52,27 @@
           <% else %>
             []
           <% end %>
-          <%= link_to task.title , task_path(task["id"]) %>
+          <%= task.title%>
+          <button class="btn">
+            <%= link_to '<i class="far fa-eye"></i>'.html_safe, task_path(task["id"]) %>
+          </button>
 
            <button class="btn">
-             <%= link_to "Delete", task_path(task),
+             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
            </button>
         </li>
         <% end %>
       </ul>
+      <div class="create-button">
+        <%= link_to "+" , new_path %>
+      </div>
     </div>
 
 
     <div class="col-sm">
       <h2>Upcoming</h2>
-      <div>
-        <%= link_to "Create task" , new_path %>
-      </div>
       <ul>
         <% @tasks.each do |task| %>
         <li>
@@ -79,24 +81,27 @@
           <% else %>
             []
           <% end %>
-          <%= link_to task.title , task_path(task["id"]) %>
+          <%= task.title%>
+          <button class="btn">
+            <%= link_to '<i class="far fa-eye"></i>'.html_safe, task_path(task["id"]) %>
+          </button>
 
            <button class="btn">
-             <%= link_to "Delete", task_path(task),
+             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
            </button>
         </li>
         <% end %>
       </ul>
+      <div class="create-button">
+        <%= link_to "+" , new_path %>
+      </div>
     </div>
 
 
     <div class="col-sm">
       <h2>Someday</h2>
-      <div>
-        <%= link_to "Create task" , new_path %>
-      </div>
       <ul>
         <% @tasks.each do |task| %>
         <li>
@@ -105,16 +110,22 @@
           <% else %>
             []
           <% end %>
-          <%= link_to task.title , task_path(task["id"]) %>
+          <%= task.title%>
+          <button class="btn">
+            <%= link_to '<i class="far fa-eye"></i>'.html_safe, task_path(task["id"]) %>
+          </button>
 
            <button class="btn">
-             <%= link_to "Delete", task_path(task),
+             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
            </button>
         </li>
         <% end %>
       </ul>
+      <div class="create-button">
+        <%= link_to "+" , new_path %>
+      </div>
     </div>
 
 
