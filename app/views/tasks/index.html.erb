@@ -1,24 +1,115 @@
 <h1> My tasks </h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <li>
-    <% if task.completed == true %>
-      [x]
-    <% else %>
-      []
-    <% end %>
-    <%= link_to task.title , task_path(task["id"]) %>
 
-     <button class="btn">
-       <%= link_to "Delete", task_path(task),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-     </button>
-  </li>
-  <% end %>
-</ul>
 
-<div>
-  <%= link_to "Create task" , new_path %>
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-sm">
+      <h2>Today</h2>
+      <div>
+        <%= link_to "Create task" , new_path %>
+      </div>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li>
+          <% if task.completed == true %>
+            [x]
+          <% else %>
+            []
+          <% end %>
+          <%= link_to task.title , task_path(task["id"]) %>
+
+           <button class="btn">
+             <%= link_to "Delete", task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+           </button>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-sm">
+      <h2>Tomorrow</h2>
+      <div>
+        <%= link_to "Create task" , new_path %>
+      </div>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li>
+          <% if task.completed == true %>
+            [x]
+          <% else %>
+            []
+          <% end %>
+          <%= link_to task.title , task_path(task["id"]) %>
+
+           <button class="btn">
+             <%= link_to "Delete", task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+           </button>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-sm">
+      <h2>Upcoming</h2>
+      <div>
+        <%= link_to "Create task" , new_path %>
+      </div>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li>
+          <% if task.completed == true %>
+            [x]
+          <% else %>
+            []
+          <% end %>
+          <%= link_to task.title , task_path(task["id"]) %>
+
+           <button class="btn">
+             <%= link_to "Delete", task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+           </button>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-sm">
+      <h2>Someday</h2>
+      <div>
+        <%= link_to "Create task" , new_path %>
+      </div>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li>
+          <% if task.completed == true %>
+            [x]
+          <% else %>
+            []
+          <% end %>
+          <%= link_to task.title , task_path(task["id"]) %>
+
+           <button class="btn">
+             <%= link_to "Delete", task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+           </button>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+  </div>
 </div>
+
