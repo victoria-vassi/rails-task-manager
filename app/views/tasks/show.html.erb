@@ -1,18 +1,27 @@
-<h1><%= @task.title %></h1>
-
-<div>
- <p class = 'details'> <%= @task.details %> </p>
-</div>
-
-  <% if @task.completed == true %>
-    [x] This task is completed
-  <% else %>
-    [] This task is not completed
-  <% end %>
-
-
 <div class="container">
-  <%= link_to "Back to list" , tasks_path %>
-  <%= link_to "Edit task" , edit_path %>
-</div>
+  <div class="row">
+    <div class="btn">
+      <button type="button"  onclick="window.location.href = '/tasks';">
+        <i class="fas fa-arrow-left"></i>
+        Back
+      </button>
+    </div>
+  </div>
 
+<div class="card m-3">
+  <div class="card-body">
+    <h1><%= @task.title %></h1>
+    <p class = 'details'> <%= @task.details %> </p>
+
+      <% if @task.completed == true %>
+        <i class="far fa-check-square"></i> This task is completed
+      <% else %>
+        <i class="far fa-square"></i> This task is not completed
+      <% end %>
+
+      <div class="edit">
+        <%= link_to 'Edit task', edit_path, class: 'btn-flat' %>
+      </div>
+    </div>
+  </div>
+</div>
